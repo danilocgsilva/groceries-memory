@@ -6,23 +6,16 @@ namespace Danilocgsilva\GroceriesMemory\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * GroceryItem
- */
 #[ORM\Entity(repositoryClass: 'App\Repository\GroceryItemRepository')]
 class GroceryItem
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: "integer")]
+    private ?int $id = null;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
+    #[ORM\Column(type: "string", length: 255)]
+    private ?string $name = null;
 
     public function getId(): ?int
     {
